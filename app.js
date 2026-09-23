@@ -24,10 +24,12 @@ const KM_PER_AU = 149597870.7; // IAU-defined astronomical unit, exact
 
 let DATA = [];
 let DATA_BY_RANK = new Map();
+let RANK_SORTED = []; // DATA sorted by rank asc — lets the Game tab sample pairs by "distance" in the size ordering, independent of row insertion order in the CSV
 let EARTH_AREA = 510064470;
 let sortKey = "rank";
 let sortAsc = true;
 let thumbObserver = null;
+let gameState = { difficulty: null, rounds: [], index: 0, score: 0 };
 
 /* ---------------------------- CSV parsing ----------------------------
  * Parsing itself is delegated to Papa Parse (loaded in index.html) rather
@@ -75,6 +77,7 @@ async function loadData() {
 
   DATA = parsed.data.map(coerceRecord).filter(d => d.name && !Number.isNaN(d.rank));
   DATA_BY_RANK = new Map(DATA.map(d => [String(d.rank), d]));
+  RANK_SORTED = DATA.slice().sort((a, b) => a.rank - b.rank);
   const earth = DATA.find(d => d.name === "Earth" && d.category === "Solar System object");
   if (earth) EARTH_AREA = earth.area_km2;
 }
@@ -252,12 +255,11 @@ function render() {
     const tr = document.createElement("tr");
     const noteAttr = d.note ? ` title="${d.note.replace(/"/g, "&quot;")}"` : "";
     tr.innerHTML = `
-      <td>${d.rank}</td>
       <td>${thumbPlaceholderHTML(d)}</td>
       <td${noteAttr}><a href="${d.wiki}" target="_blank" rel="noopener">${d.name}</a>${d.note ? " *" : ""}</td>
-      <td>${d.subtype || d.category}</td>
       <td>${formatArea(d.area_km2)}</td>
       <td>${formatDistance(d.dist_from_sun_au)}</td>
+      <td>${d.subtype || d.category}</td>
     `;
     frag.appendChild(tr);
   }
@@ -309,25 +311,267 @@ function updateCompare() {
   out.querySelectorAll(".thumb").forEach(resolveThumb);
 }
 
+/* -------------------------------- Game tool ------------------------------
+ * Guess-which-is-bigger, 10 fixed rounds, +1 per correct guess, 0 per miss.
+ *
+ * Pair sampling varies by difficulty, all drawn from RANK_SORTED (DATA in
+ * size order) so "distance between two objects" just means "gap between
+ * their indices in that array" — nothing to do with the CSV's row order:
+ *   - easy:   two fully random indices — sometimes a landslide, sometimes
+ *              a coin flip, and that unpredictability is the point.
+ *   - medium: one random index, the other offset by a *skewed* random gap
+ *              (small gaps much likelier than big ones, no hard cutoff) in
+ *              a random direction — "usually similar-ish, occasionally not"
+ *              rather than strict neighbours.
+ *   - hard:   same skewed-gap sampling as medium, but no name shown (image
+ *              only) until the reveal. Draws from the same full pool as
+ *              the other tiers — every row resolves an image the same way
+ *              the table itself does (image_url/shape_code, falling back
+ *              to a live Wikipedia lookup), so there's no separate
+ *              image-availability filter here either.
+ * -------------------------------------------------------------------- */
+
+// Exponential-ish skew: most gaps land small (mean ~8), tapering off with
+// a long tail rather than a hard cutoff. Capped only to avoid a pathological
+// jump bigger than the dataset itself.
+function skewedGap() {
+  const gap = Math.floor(-Math.log(Math.random()) * 8) + 1;
+  return Math.min(gap, 150);
+}
+
+function pickIndexPair(poolLen, weighted) {
+  const i = Math.floor(Math.random() * poolLen);
+  let j;
+  if (!weighted) {
+    do { j = Math.floor(Math.random() * poolLen); } while (j === i);
+  } else {
+    const dir = Math.random() < 0.5 ? -1 : 1;
+    j = Math.max(0, Math.min(poolLen - 1, i + dir * skewedGap()));
+    if (j === i) j = (i === poolLen - 1) ? i - 1 : i + 1;
+  }
+  return [i, j];
+}
+
+function generateGameRounds(difficulty) {
+  const weighted = difficulty !== "easy";
+  const rounds = [];
+  let guardCount = 0;
+  while (rounds.length < 10 && guardCount < 1000) {
+    guardCount++;
+    const [i, j] = pickIndexPair(RANK_SORTED.length, weighted);
+    const a = RANK_SORTED[i], b = RANK_SORTED[j];
+    rounds.push({ a, b, guess: null, correct: null });
+  }
+  return rounds;
+}
+
+function gameCardHTML(d, hideName) {
+  return `
+    ${thumbPlaceholderHTML(d)}
+    <p class="game-name"${hideName ? " hidden" : ""}><strong>${d.name}</strong></p>
+    <p class="game-area" hidden></p>
+  `;
+}
+
+function renderGameRound() {
+  const round = gameState.rounds[gameState.index];
+  const hideName = gameState.difficulty === "hard";
+  document.getElementById("game-progress").textContent =
+    `Round ${gameState.index + 1} of 10 \u2014 Score: ${gameState.score}`;
+
+  const cardA = document.getElementById("game-card-a");
+  const cardB = document.getElementById("game-card-b");
+  cardA.innerHTML = gameCardHTML(round.a, hideName);
+  cardB.innerHTML = gameCardHTML(round.b, hideName);
+  cardA.disabled = false;
+  cardB.disabled = false;
+
+  document.getElementById("game-reveal").innerHTML = "";
+  document.getElementById("game-next").hidden = true;
+
+  // Same reasoning as Compare: only two on screen, resolve directly.
+  resolveThumb(cardA.querySelector(".thumb"));
+  resolveThumb(cardB.querySelector(".thumb"));
+}
+
+function handleGameGuess(side) {
+  const round = gameState.rounds[gameState.index];
+  if (round.guess) return; // already answered this round
+
+  const chosen = side === "a" ? round.a : round.b;
+  const other = side === "a" ? round.b : round.a;
+  round.guess = side;
+  round.correct = chosen.area_km2 >= other.area_km2; // ties (none in practice) count as correct
+
+  if (round.correct) gameState.score += 1;
+  renderGameReveal(round);
+}
+
+function renderGameReveal(round) {
+  const { a, b, correct } = round;
+  const cardA = document.getElementById("game-card-a");
+  const cardB = document.getElementById("game-card-b");
+  cardA.disabled = true;
+  cardB.disabled = true;
+
+  [cardA, cardB].forEach(card => {
+    card.querySelector(".game-name").hidden = false;
+  });
+  cardA.querySelector(".game-area").hidden = false;
+  cardA.querySelector(".game-area").textContent = formatArea(a.area_km2);
+  cardB.querySelector(".game-area").hidden = false;
+  cardB.querySelector(".game-area").textContent = formatArea(b.area_km2);
+
+  const symbol = a.area_km2 === b.area_km2 ? "=" : (a.area_km2 > b.area_km2 ? "&gt;" : "&lt;");
+  const resultTag = correct ? "ins" : "del";
+  document.getElementById("game-reveal").innerHTML = `
+    <p><strong>${a.name} ${symbol} ${b.name}</strong></p>
+    <p><${resultTag}>${correct ? "Correct" : "Incorrect"}</${resultTag}></p>
+  `;
+
+  document.getElementById("game-next").hidden = false;
+}
+
+function outcomeText(score) {
+  if (score >= 9) return "You\u2019ve sized it up.";
+  if (score >= 6) return "Solid sense of scale.";
+  if (score >= 3) return "Your score is a bit small yo.";
+  return "Back to the drawing board.";
+}
+
+function nextDifficulty(difficulty) {
+  if (difficulty === "easy") return "medium";
+  if (difficulty === "medium") return "hard";
+  return null; // hard is the ceiling
+}
+
+function renderGameReview() {
+  const tbody = document.getElementById("game-review-body");
+  const frag = document.createDocumentFragment();
+  gameState.rounds.forEach((round, i) => {
+    const { a, b, guess, correct } = round;
+    const guessedName = guess === "a" ? a.name : b.name;
+    const biggerName = a.area_km2 >= b.area_km2 ? a.name : b.name;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${i + 1}</td>
+      <td>${guessedName}</td>
+      <td>${biggerName}</td>
+      <td>${correct ? "<ins>&check;</ins>" : "<del>&cross;</del>"}</td>
+    `;
+    frag.appendChild(tr);
+  });
+  tbody.innerHTML = "";
+  tbody.appendChild(frag);
+}
+
+async function shareGameResult(score, difficulty) {
+  const text = `I scored ${score}/10 on "How big is it?" (${difficulty}) \u2014 can you beat me?`;
+  const url = location.href.split("#")[0];
+  const shareBtn = document.getElementById("game-share");
+
+  if (navigator.share) {
+    try { await navigator.share({ text, url }); } catch (e) { /* user cancelled the share sheet */ }
+    return;
+  }
+  if (navigator.clipboard) {
+    try {
+      await navigator.clipboard.writeText(`${text} ${url}`);
+      const original = shareBtn.textContent;
+      shareBtn.textContent = "Copied!";
+      setTimeout(() => { shareBtn.textContent = original; }, 1500);
+    } catch (e) { /* clipboard blocked (permissions/insecure context) */ }
+  }
+}
+
+function endGame() {
+  document.getElementById("game-play").hidden = true;
+  document.getElementById("game-end").hidden = false;
+
+  const score = gameState.score;
+  document.getElementById("game-score").textContent = `${score} / 10`;
+  document.getElementById("game-outcome").textContent = outcomeText(score);
+  renderGameReview();
+
+  document.getElementById("game-share").onclick = () => shareGameResult(score, gameState.difficulty);
+  document.getElementById("game-again-same").onclick = () => startGame(gameState.difficulty);
+
+  const nextDiff = nextDifficulty(gameState.difficulty);
+  const harderBtn = document.getElementById("game-again-harder");
+  if (nextDiff) {
+    harderBtn.hidden = false;
+    document.getElementById("next-diff-label").textContent = nextDiff[0].toUpperCase() + nextDiff.slice(1);
+    harderBtn.onclick = () => startGame(nextDiff);
+  } else {
+    harderBtn.hidden = true;
+  }
+}
+
+function startGame(difficulty) {
+  gameState = { difficulty, rounds: generateGameRounds(difficulty), index: 0, score: 0 };
+  document.getElementById("game-setup").hidden = true;
+  document.getElementById("game-end").hidden = true;
+  document.getElementById("game-play").hidden = false;
+  renderGameRound();
+}
+
+function setupGame() {
+  document.querySelectorAll("#game-setup button[data-difficulty]").forEach(btn => {
+    btn.addEventListener("click", () => startGame(btn.getAttribute("data-difficulty")));
+  });
+  document.getElementById("game-card-a").addEventListener("click", () => handleGameGuess("a"));
+  document.getElementById("game-card-b").addEventListener("click", () => handleGameGuess("b"));
+  document.getElementById("game-next").addEventListener("click", () => {
+    gameState.index += 1;
+    if (gameState.index >= 10) { endGame(); } else { renderGameRound(); }
+  });
+  document.getElementById("game-change-difficulty").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.getElementById("game-play").hidden = true;
+    document.getElementById("game-end").hidden = true;
+    document.getElementById("game-setup").hidden = false;
+  });
+}
+
 /* --------------------------------- Tabs --------------------------------- */
 // Pure DOM wiring, independent of the CSV data, so tabs work immediately
-// even while the data is still loading.
+// even while the data is still loading. Each tab also gets a `?tab=` URL
+// param — deep-linkable (e.g. sharing a game result already lands the
+// recipient on the Game tab, see shareGameResult) and kept in sync via
+// replaceState rather than pushState, so switching tabs doesn't flood the
+// browser's back/forward history with every click.
+const TAB_PARAM = "tab";
+
 function setupTabs() {
   const tabs = [
-    { btn: document.getElementById("tab-list"), panel: document.getElementById("panel-list") },
-    { btn: document.getElementById("tab-compare"), panel: document.getElementById("panel-compare") },
+    { key: "browse", btn: document.getElementById("tab-list"), panel: document.getElementById("panel-list") },
+    { key: "compare", btn: document.getElementById("tab-compare"), panel: document.getElementById("panel-compare") },
+    { key: "game", btn: document.getElementById("tab-game"), panel: document.getElementById("panel-game") },
   ];
-  function activate(activeBtn) {
-    for (const { btn, panel } of tabs) {
+
+  function activate(activeBtn, { updateUrl = true } = {}) {
+    for (const { key, btn, panel } of tabs) {
       const isActive = btn === activeBtn;
       btn.setAttribute("aria-selected", String(isActive));
       btn.classList.toggle("secondary", !isActive);
       panel.hidden = !isActive;
+      if (isActive && updateUrl) {
+        const url = new URL(location.href);
+        url.searchParams.set(TAB_PARAM, key);
+        history.replaceState(null, "", url);
+      }
     }
   }
   for (const { btn } of tabs) {
     btn.addEventListener("click", () => activate(btn));
   }
+
+  // Deep link on load: ?tab=compare or ?tab=game opens straight to that
+  // tab. No match (including no param at all) leaves the static HTML
+  // default — Browse — in place, so this only ever narrows, never resets.
+  const requested = new URLSearchParams(location.search).get(TAB_PARAM);
+  const match = tabs.find(t => t.key === requested);
+  if (match) activate(match.btn, { updateUrl: false });
 }
 setupTabs();
 
@@ -359,15 +603,16 @@ function wireUpEvents() {
 
   document.getElementById("item-a").addEventListener("input", updateCompare);
   document.getElementById("item-b").addEventListener("input", updateCompare);
+  setupGame();
 }
 
 async function init() {
   const tbody = document.getElementById("tbody");
-  tbody.innerHTML = `<tr><td colspan="6"><small>Loading data from ${CSV_PATH}&hellip;</small></td></tr>`;
+  tbody.innerHTML = `<tr><td colspan="5"><small>Loading data from ${CSV_PATH}&hellip;</small></td></tr>`;
   try {
     await loadData();
   } catch (err) {
-    tbody.innerHTML = `<tr><td colspan="6">
+    tbody.innerHTML = `<tr><td colspan="5">
       <strong>Couldn't load ${CSV_PATH}.</strong>
       <p><small>If you opened this file directly (a <code>file://</code> URL), most browsers block
       the fetch this page needs to read the CSV. Serve the folder over HTTP instead, e.g. run

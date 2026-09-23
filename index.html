@@ -29,9 +29,9 @@ figure { overflow-x: auto; }
 @media (max-width: 575.98px) {
   figure { margin-inline: calc(var(--pico-spacing) * -1); }
 }
-/* Comparison tab: same thumbnail mechanism as the table, just bigger,
-   since there are only ever two of them on screen at once. */
-#compare-result .thumb { width: 96px; height: 96px; }
+/* Comparison and Game tabs: same thumbnail mechanism as the table, just
+   bigger, since there are only ever two on screen at once. */
+#compare-result .thumb, #panel-game .thumb { width: 96px; height: 96px; }
 .compare-card { text-align: center; }
 /* Title + tabs share one condensed header row (Pico's nav auto-spaces a
    first and last <ul> apart), so the h1 needs to drop its normal block
@@ -69,6 +69,7 @@ nav h1 { margin: 0; font-size: 1.1rem; }
 <ul>
   <li><button type="button" id="tab-list" role="tab" aria-selected="true" aria-controls="panel-list">Browse</button></li>
   <li><button type="button" id="tab-compare" role="tab" aria-selected="false" aria-controls="panel-compare" class="secondary">Compare</button></li>
+  <li><button type="button" id="tab-game" role="tab" aria-selected="false" aria-controls="panel-game" class="secondary">Game</button></li>
 </ul>
 </nav>
 
@@ -89,12 +90,11 @@ nav h1 { margin: 0; font-size: 1.1rem; }
 <table role="grid">
 <thead>
 <tr>
-  <th scope="col" data-key="rank">#</th>
   <th scope="col">Image</th>
   <th scope="col" data-key="name">Name</th>
-  <th scope="col" data-key="category">Category</th>
   <th scope="col" data-key="area_km2">Area (km&sup2;)</th>
   <th scope="col" data-key="dist_from_sun_au">Distance from Sun</th>
+  <th scope="col" data-key="category">Category</th>
 </tr>
 </thead>
 <tbody id="tbody"></tbody>
@@ -115,6 +115,50 @@ nav h1 { margin: 0; font-size: 1.1rem; }
 </div>
 <datalist id="all-names"></datalist>
 <div id="compare-result" aria-live="polite"><small>Type two names above (countries, moons, oceans, asteroids&hellip;) to compare their surface areas.</small></div>
+</article>
+</section>
+
+<section id="panel-game" role="tabpanel" aria-labelledby="tab-game" hidden>
+<article>
+
+<div id="game-setup">
+  <p>Guess which of two is bigger by area. Ten rounds, then you get a score.</p>
+  <div class="grid">
+    <button type="button" data-difficulty="easy">Easy</button>
+    <button type="button" data-difficulty="medium">Medium</button>
+    <button type="button" data-difficulty="hard">Hard &mdash; image only</button>
+  </div>
+</div>
+
+<div id="game-play" hidden>
+  <p><small id="game-progress"></small></p>
+  <div class="grid">
+    <button type="button" id="game-card-a" class="outline"></button>
+    <button type="button" id="game-card-b" class="outline"></button>
+  </div>
+  <p id="game-reveal" aria-live="polite"></p>
+  <button type="button" id="game-next" hidden>Next round &rarr;</button>
+</div>
+
+<div id="game-end" hidden>
+  <h3 id="game-score"></h3>
+  <p id="game-outcome"></p>
+  <figure>
+    <table role="grid">
+      <thead>
+        <tr><th scope="col">#</th><th scope="col">Your guess</th><th scope="col">Bigger one</th><th scope="col">Result</th></tr>
+      </thead>
+      <tbody id="game-review-body"></tbody>
+    </table>
+  </figure>
+  <div class="grid">
+    <button type="button" id="game-share">Share result</button>
+    <button type="button" id="game-again-same" class="secondary">Play again</button>
+    <button type="button" id="game-again-harder" class="secondary" hidden>Play again on <span id="next-diff-label"></span></button>
+  </div>
+  <p><small><a href="#" id="game-change-difficulty">Choose a different difficulty</a></small></p>
+</div>
+
 </article>
 </section>
 
