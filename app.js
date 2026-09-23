@@ -392,6 +392,12 @@ function renderGameRound() {
   // Same reasoning as Compare: only two on screen, resolve directly.
   resolveThumb(cardA.querySelector(".thumb"));
   resolveThumb(cardB.querySelector(".thumb"));
+
+  // Advancing to a new round happens from wherever the Next button
+  // scrolled to (bottom of the previous reveal) — bring the fresh round
+  // back into view at the top rather than leaving the player scrolled
+  // past it.
+  document.getElementById("game-progress").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function handleGameGuess(side) {
@@ -429,7 +435,12 @@ function renderGameReveal(round) {
     <p><${resultTag}>${correct ? "Correct" : "Incorrect"}</${resultTag}></p>
   `;
 
-  document.getElementById("game-next").hidden = false;
+  const nextBtn = document.getElementById("game-next");
+  nextBtn.hidden = false;
+  // The reveal (comparison line + result) pushes the button below the
+  // fold on mobile — scroll it into view automatically rather than
+  // leaving the player to find it by hand every round.
+  nextBtn.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 function outcomeText(score) {
