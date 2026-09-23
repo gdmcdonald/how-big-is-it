@@ -387,6 +387,7 @@ function renderGameRound() {
   cardB.disabled = false;
 
   document.getElementById("game-reveal").innerHTML = "";
+  document.getElementById("game-result-badge").innerHTML = "";
   document.getElementById("game-next").hidden = true;
 
   // Same reasoning as Compare: only two on screen, resolve directly.
@@ -430,10 +431,9 @@ function renderGameReveal(round) {
 
   const symbol = a.area_km2 === b.area_km2 ? "=" : (a.area_km2 > b.area_km2 ? "&gt;" : "&lt;");
   const resultTag = correct ? "ins" : "del";
-  document.getElementById("game-reveal").innerHTML = `
-    <p><strong>${a.name} ${symbol} ${b.name}</strong></p>
-    <p><${resultTag}>${correct ? "Correct" : "Incorrect"}</${resultTag}></p>
-  `;
+  document.getElementById("game-reveal").innerHTML = `<p><strong>${a.name} ${symbol} ${b.name}</strong></p>`;
+  document.getElementById("game-result-badge").innerHTML =
+    `<${resultTag}>${correct ? "Correct" : "Incorrect"}</${resultTag}>`;
 
   const nextBtn = document.getElementById("game-next");
   nextBtn.hidden = false;
