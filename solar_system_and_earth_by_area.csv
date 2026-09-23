@@ -1,0 +1,345 @@
+rank,name,category,subtype,area_km2,wiki,note,shape_code,dist_from_sun_au,image_url
+1,Sun,Solar System object,Star,6.0787E+12,https://en.wikipedia.org/wiki/Sun,,,0,
+2,Jupiter,Solar System object,Planet,61419000000,https://en.wikipedia.org/wiki/Jupiter,,,5.2038,
+3,Saturn,Solar System object,Planet,42612000000,https://en.wikipedia.org/wiki/Saturn,,,9.5826,
+4,Uranus,Solar System object,Planet,8083100000,https://en.wikipedia.org/wiki/Uranus,,,19.2184,
+5,Neptune,Solar System object,Planet,7618300000,https://en.wikipedia.org/wiki/Neptune,,,30.11,
+6,Earth,Solar System object,Planet,510064470,https://en.wikipedia.org/wiki/Earth,,,1,
+7,Venus,Solar System object,Planet,460200000,https://en.wikipedia.org/wiki/Venus,,,0.723332,
+8,Pacific Ocean,Ocean,Ocean,165250000,https://en.wikipedia.org/wiki/Pacific_Ocean,,,1,
+9,Mars,Solar System object,Planet,144370000,https://en.wikipedia.org/wiki/Mars,,,1.523679,
+10,Atlantic Ocean,Ocean,Ocean,106460000,https://en.wikipedia.org/wiki/Atlantic_Ocean,,,1,
+11,Ganymede,Solar System object,Moon (Jupiter),86999000,https://en.wikipedia.org/wiki/Ganymede_(moon),,,5.2038,
+12,Titan,Solar System object,Moon (Saturn),83305400,https://en.wikipedia.org/wiki/Titan_(moon),,,9.5826,
+13,Mercury,Solar System object,Planet,74797000,https://en.wikipedia.org/wiki/Mercury_(planet),,,0.387098,
+14,Callisto,Solar System object,Moon (Jupiter),73005000,https://en.wikipedia.org/wiki/Callisto_(moon),,,5.2038,
+15,Indian Ocean,Ocean,Ocean,70560000,https://en.wikipedia.org/wiki/Indian_Ocean,,,1,
+16,Asia,Continent,Continent,44579000,https://en.wikipedia.org/wiki/Asia,,,1,
+17,Io,Solar System object,Moon (Jupiter),41698000,https://en.wikipedia.org/wiki/Io_(moon),,,5.2038,
+18,Moon (Earth's Moon),Solar System object,Moon (Earth),37937000,https://en.wikipedia.org/wiki/Moon,,,1,
+19,Europa,Solar System object,Moon (Jupiter),30613000,https://en.wikipedia.org/wiki/Europa_(moon),,,5.2038,
+20,Africa,Continent,Continent,30370000,https://en.wikipedia.org/wiki/Africa,,,1,
+21,North America,Continent,Continent,24709000,https://en.wikipedia.org/wiki/North_America,,,1,
+22,Triton,Solar System object,Moon (Neptune),23018000,https://en.wikipedia.org/wiki/Triton_(moon),,,30.11,
+23,Southern Ocean,Ocean,Ocean,21960000,https://en.wikipedia.org/wiki/Southern_Ocean,,,1,
+24,South America,Continent,Continent,17840000,https://en.wikipedia.org/wiki/South_America,,,1,
+25,Pluto,Solar System object,Dwarf Planet,17790000,https://en.wikipedia.org/wiki/Pluto,,,39.482,
+26,Russia,Country / dependency,Country / dependency,17098246,https://en.wikipedia.org/wiki/Russia,,ru,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ru/vector.svg
+27,Eris,Solar System object,Dwarf Planet,17000000,https://en.wikipedia.org/wiki/Eris_(dwarf_planet),,,67.69,
+28,Arctic Ocean,Ocean,Ocean,15558000,https://en.wikipedia.org/wiki/Arctic_Ocean,,,1,
+29,Antarctica (continent),Continent,Continent,14200000,https://en.wikipedia.org/wiki/Antarctica,,,1,
+30,Europe,Continent,Continent,10180000,https://en.wikipedia.org/wiki/Europe,,,1,
+31,Canada,Country / dependency,Country / dependency,9984670,https://en.wikipedia.org/wiki/Canada,,ca,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ca/vector.svg
+32,China,Country / dependency,Country / dependency,9596960,https://en.wikipedia.org/wiki/China,,cn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cn/vector.svg
+33,United States,Country / dependency,Country / dependency,9525067,https://en.wikipedia.org/wiki/United_States,,us,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/us/vector.svg
+34,Australia (continent),Continent,Continent,8600000,https://en.wikipedia.org/wiki/Australia_(continent),,,1,
+35,Brazil,Country / dependency,Country / dependency,8510346,https://en.wikipedia.org/wiki/Brazil,,br,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/br/vector.svg
+36,Haumea,Solar System object,Dwarf Planet,8140000,https://en.wikipedia.org/wiki/Haumea,,,43.335,
+37,Titania,Solar System object,Moon (Uranus),7820000,https://en.wikipedia.org/wiki/Titania_(moon),,,19.2184,
+38,Australia,Country / dependency,Country / dependency,7617930,https://en.wikipedia.org/wiki/Australia,,au,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/au/vector.svg
+39,Rhea,Solar System object,Moon (Saturn),7340000,https://en.wikipedia.org/wiki/Rhea_(moon),,,9.5826,
+40,Oberon,Solar System object,Moon (Uranus),7285000,https://en.wikipedia.org/wiki/Oberon_(moon),,,19.2184,
+41,Iapetus,Solar System object,Moon (Saturn),6800000,https://en.wikipedia.org/wiki/Iapetus_(moon),,,9.5826,
+42,Makemake,Solar System object,Dwarf Planet,6400000,https://en.wikipedia.org/wiki/Makemake,,,45.499,
+43,Australian Antarctic Territory,Country / dependency,Country / dependency,5896500,https://en.wikipedia.org/wiki/Australian_Antarctic_Territory,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+44,Gonggong,Solar System object,Dwarf Planet (candidate),4753000,https://en.wikipedia.org/wiki/225088_Gonggong,,,66.895,
+45,Charon,Solar System object,Moon (Pluto),4578000,https://en.wikipedia.org/wiki/Charon_(moon),,,39.482,
+46,Umbriel,Solar System object,Moon (Uranus),4300000,https://en.wikipedia.org/wiki/Umbriel_(moon),,,19.2184,
+47,Ariel,Solar System object,Moon (Uranus),4211000,https://en.wikipedia.org/wiki/Ariel_(moon),,,19.2184,
+48,Dione,Solar System object,Moon (Saturn),3965000,https://en.wikipedia.org/wiki/Dione_(moon),,,9.5826,
+49,Quaoar,Solar System object,Dwarf Planet (candidate),3830000,https://en.wikipedia.org/wiki/50000_Quaoar,,,43.694,
+50,Tethys,Solar System object,Moon (Saturn),3570000,https://en.wikipedia.org/wiki/Tethys_(moon),,,9.5826,
+51,India,Country / dependency,Country / dependency,3287263,https://en.wikipedia.org/wiki/India,,in,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/in/vector.svg
+52,Ceres,Solar System object,Dwarf Planet,2850000,https://en.wikipedia.org/wiki/Ceres_(dwarf_planet),,,2.7658,
+53,Argentina,Country / dependency,Country / dependency,2780400,https://en.wikipedia.org/wiki/Argentina,,ar,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ar/vector.svg
+54,Kazakhstan,Country / dependency,Country / dependency,2724910,https://en.wikipedia.org/wiki/Kazakhstan,,kz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/kz/vector.svg
+55,Queen Maud Land,Country / dependency,Country / dependency,2700000,https://en.wikipedia.org/wiki/Queen_Maud_Land,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+56,Orcus,Solar System object,Dwarf Planet (candidate),2601552.876,https://en.wikipedia.org/wiki/90482_Orcus,"area computed from mean radius, assuming a sphere",,39.174,
+57,Sedna,Solar System object,Dwarf Planet (candidate),2578732.347,https://en.wikipedia.org/wiki/90377_Sedna,"area computed from mean radius, assuming a sphere",,506,
+58,Algeria,Country / dependency,Country / dependency,2381741,https://en.wikipedia.org/wiki/Algeria,,dz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/dz/vector.svg
+59,Democratic Republic of the Congo,Country / dependency,Country / dependency,2344858,https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo,,cd,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cd/vector.svg
+60,Denmark (Kingdom of Denmark),Country / dependency,Country / dependency,2210573,https://en.wikipedia.org/wiki/Denmark,,dk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/dk/vector.svg
+61,Salacia,Solar System object,Trans-Neptunian object,2206164.591,https://en.wikipedia.org/wiki/120347_Salacia,"area computed from mean radius, assuming a sphere",,42.184,
+62,Greenland,Country / dependency,Country / dependency,2166086,https://en.wikipedia.org/wiki/Greenland,,gl,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gl/vector.svg
+63,Saudi Arabia,Country / dependency,Country / dependency,2149690,https://en.wikipedia.org/wiki/Saudi_Arabia,,sa,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sa/vector.svg
+64,Mexico,Country / dependency,Country / dependency,1964375,https://en.wikipedia.org/wiki/Mexico,,mx,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mx/vector.svg
+65,Indonesia,Country / dependency,Country / dependency,1904569,https://en.wikipedia.org/wiki/Indonesia,,id,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/id/vector.svg
+66,Sudan,Country / dependency,Country / dependency,1878000,https://en.wikipedia.org/wiki/Sudan,,sd,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sd/vector.svg
+67,Libya,Country / dependency,Country / dependency,1759540,https://en.wikipedia.org/wiki/Libya,,ly,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ly/vector.svg
+68,British Antarctic Territory,Country / dependency,Country / dependency,1709400,https://en.wikipedia.org/wiki/British_Antarctic_Territory,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+69,Iran,Country / dependency,Country / dependency,1648195,https://en.wikipedia.org/wiki/Iran,,ir,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ir/vector.svg
+70,Marie Byrd Land,Country / dependency,Country / dependency,1610400,https://en.wikipedia.org/wiki/Marie_Byrd_Land,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+71,Mongolia,Country / dependency,Country / dependency,1564116,https://en.wikipedia.org/wiki/Mongolia,,mn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mn/vector.svg
+72,Argentine Antarctica,Country / dependency,Country / dependency,1461597,https://en.wikipedia.org/wiki/Argentine_Antarctica,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+73,Peru,Country / dependency,Country / dependency,1285216,https://en.wikipedia.org/wiki/Peru,,pe,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pe/vector.svg
+74,Chad,Country / dependency,Country / dependency,1284000,https://en.wikipedia.org/wiki/Chad,,td,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/td/vector.svg
+75,Niger,Country / dependency,Country / dependency,1267000,https://en.wikipedia.org/wiki/Niger,,ne,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ne/vector.svg
+76,Chilean Antarctic Territory,Country / dependency,Country / dependency,1250268,https://en.wikipedia.org/wiki/Chilean_Antarctic_Territory,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+77,Angola,Country / dependency,Country / dependency,1246700,https://en.wikipedia.org/wiki/Angola,,ao,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ao/vector.svg
+78,Mali,Country / dependency,Country / dependency,1240192,https://en.wikipedia.org/wiki/Mali,,ml,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ml/vector.svg
+79,South Africa,Country / dependency,Country / dependency,1219090,https://en.wikipedia.org/wiki/South_Africa,,za,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/za/vector.svg
+80,Colombia,Country / dependency,Country / dependency,1138910,https://en.wikipedia.org/wiki/Colombia,,co,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/co/vector.svg
+81,Ethiopia,Country / dependency,Country / dependency,1104300,https://en.wikipedia.org/wiki/Ethiopia,,et,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/et/vector.svg
+82,Bolivia,Country / dependency,Country / dependency,1098581,https://en.wikipedia.org/wiki/Bolivia,,bo,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bo/vector.svg
+83,Mauritania,Country / dependency,Country / dependency,1030700,https://en.wikipedia.org/wiki/Mauritania,,mr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mr/vector.svg
+84,Egypt,Country / dependency,Country / dependency,1001450,https://en.wikipedia.org/wiki/Egypt,,eg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/eg/vector.svg
+85,Tanzania,Country / dependency,Country / dependency,947303,https://en.wikipedia.org/wiki/Tanzania,,tz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tz/vector.svg
+86,Nigeria,Country / dependency,Country / dependency,923768,https://en.wikipedia.org/wiki/Nigeria,,ng,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ng/vector.svg
+87,Venezuela,Country / dependency,Country / dependency,912050,https://en.wikipedia.org/wiki/Venezuela,,ve,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ve/vector.svg
+88,Pakistan,Country / dependency,Country / dependency,882363,https://en.wikipedia.org/wiki/Pakistan,,pk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pk/vector.svg
+89,Vesta,Solar System object,Asteroid (belt),867221.447,https://en.wikipedia.org/wiki/4_Vesta,"area computed from mean radius, assuming a sphere",,2.36,
+90,Namibia,Country / dependency,Country / dependency,824292,https://en.wikipedia.org/wiki/Namibia,,na,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/na/vector.svg
+91,Pallas,Solar System object,Asteroid (belt),823549.665,https://en.wikipedia.org/wiki/2_Pallas,"area computed from mean radius, assuming a sphere",,2.77,
+92,Mozambique,Country / dependency,Country / dependency,799380,https://en.wikipedia.org/wiki/Mozambique,,mz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mz/vector.svg
+93,Enceladus,Solar System object,Moon (Saturn),798648.27,https://en.wikipedia.org/wiki/Enceladus,"area computed from mean radius, assuming a sphere",,9.5826,
+94,Turkey,Country / dependency,Country / dependency,783562,https://en.wikipedia.org/wiki/Turkey,,tr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tr/vector.svg
+95,Chile,Country / dependency,Country / dependency,756102,https://en.wikipedia.org/wiki/Chile,,cl,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cl/vector.svg
+96,Zambia,Country / dependency,Country / dependency,752612,https://en.wikipedia.org/wiki/Zambia,,zm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/zm/vector.svg
+97,Miranda,Solar System object,Moon (Uranus),698710.815,https://en.wikipedia.org/wiki/Miranda_(moon),"area computed from mean radius, assuming a sphere",,19.2184,
+98,Myanmar,Country / dependency,Country / dependency,676578,https://en.wikipedia.org/wiki/Myanmar,,mm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mm/vector.svg
+99,Afghanistan,Country / dependency,Country / dependency,652864,https://en.wikipedia.org/wiki/Afghanistan,,af,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/af/vector.svg
+100,South Sudan,Country / dependency,Country / dependency,644329,https://en.wikipedia.org/wiki/South_Sudan,,ss,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ss/vector.svg
+101,France,Country / dependency,Country / dependency,643801,https://en.wikipedia.org/wiki/France,,fr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/fr/vector.svg
+102,Somalia,Country / dependency,Country / dependency,637657,https://en.wikipedia.org/wiki/Somalia,,so,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/so/vector.svg
+103,Central African Republic,Country / dependency,Country / dependency,622984,https://en.wikipedia.org/wiki/Central_African_Republic,,cf,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cf/vector.svg
+104,Ukraine,Country / dependency,Country / dependency,603550,https://en.wikipedia.org/wiki/Ukraine,,ua,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ua/vector.svg
+105,Madagascar,Country / dependency,Country / dependency,587041,https://en.wikipedia.org/wiki/Madagascar,,mg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mg/vector.svg
+106,Hygiea,Solar System object,Asteroid (belt),586296.587,https://en.wikipedia.org/wiki/10_Hygiea,"area computed from mean radius, assuming a sphere",,3.144,
+107,Botswana,Country / dependency,Country / dependency,582000,https://en.wikipedia.org/wiki/Botswana,,bw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bw/vector.svg
+108,Kenya,Country / dependency,Country / dependency,580367,https://en.wikipedia.org/wiki/Kenya,,ke,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ke/vector.svg
+109,Proteus,Solar System object,Moon (Neptune),554176.944,https://en.wikipedia.org/wiki/Proteus_(moon),"area computed from mean radius, assuming a sphere",,30.11,
+110,France (metropolitan),Country / dependency,Country / dependency,551500,https://en.wikipedia.org/wiki/Metropolitan_France,,fr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/fr/vector.svg
+111,Thailand,Country / dependency,Country / dependency,513120,https://en.wikipedia.org/wiki/Thailand,,th,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/th/vector.svg
+112,Spain,Country / dependency,Country / dependency,505370,https://en.wikipedia.org/wiki/Spain,,es,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/es/vector.svg
+113,Mimas,Solar System object,Moon (Saturn),493647.753,https://en.wikipedia.org/wiki/Mimas_(moon),"area computed from mean radius, assuming a sphere",,9.5826,
+114,Turkmenistan,Country / dependency,Country / dependency,488100,https://en.wikipedia.org/wiki/Turkmenistan,,tm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tm/vector.svg
+115,Cameroon,Country / dependency,Country / dependency,475650,https://en.wikipedia.org/wiki/Cameroon,,cm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cm/vector.svg
+116,Papua New Guinea,Country / dependency,Country / dependency,462840,https://en.wikipedia.org/wiki/Papua_New_Guinea,,pg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pg/vector.svg
+117,Yemen,Country / dependency,Country / dependency,455503,https://en.wikipedia.org/wiki/Yemen,,ye,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ye/vector.svg
+118,Sweden,Country / dependency,Country / dependency,450295,https://en.wikipedia.org/wiki/Sweden,,se,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/se/vector.svg
+119,Ross Dependency,Country / dependency,Country / dependency,450000,https://en.wikipedia.org/wiki/Ross_Dependency,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+120,Uzbekistan,Country / dependency,Country / dependency,447400,https://en.wikipedia.org/wiki/Uzbekistan,,uz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/uz/vector.svg
+121,Morocco,Country / dependency,Country / dependency,446550,https://en.wikipedia.org/wiki/Morocco,,ma,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ma/vector.svg
+122,Iraq,Country / dependency,Country / dependency,438317,https://en.wikipedia.org/wiki/Iraq,,iq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/iq/vector.svg
+123,Paraguay,Country / dependency,Country / dependency,406752,https://en.wikipedia.org/wiki/Paraguay,,py,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/py/vector.svg
+124,Zimbabwe,Country / dependency,Country / dependency,390757,https://en.wikipedia.org/wiki/Zimbabwe,,zw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/zw/vector.svg
+125,Norway,Country / dependency,Country / dependency,386224,https://en.wikipedia.org/wiki/Norway,,no,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/no/vector.svg
+126,Japan,Country / dependency,Country / dependency,377915,https://en.wikipedia.org/wiki/Japan,,jp,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/jp/vector.svg
+127,Germany,Country / dependency,Country / dependency,357581,https://en.wikipedia.org/wiki/Germany,,de,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/de/vector.svg
+128,Adelie Land,Country / dependency,Country / dependency,351000,https://en.wikipedia.org/wiki/Adelie_Land,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+129,Interamnia,Solar System object,Asteroid (belt),346278.909,https://en.wikipedia.org/wiki/704_Interamnia,"area computed from mean radius, assuming a sphere",,3.056,
+130,Republic of the Congo,Country / dependency,Country / dependency,342000,https://en.wikipedia.org/wiki/Republic_of_the_Congo,,cg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cg/vector.svg
+131,Finland,Country / dependency,Country / dependency,338145,https://en.wikipedia.org/wiki/Finland,,fi,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/fi/vector.svg
+132,Vietnam,Country / dependency,Country / dependency,331340,https://en.wikipedia.org/wiki/Vietnam,,vn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/vn/vector.svg
+133,Malaysia,Country / dependency,Country / dependency,330621,https://en.wikipedia.org/wiki/Malaysia,,my,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/my/vector.svg
+134,Norway (mainland),Country / dependency,Country / dependency,323802,https://en.wikipedia.org/wiki/Norway,,no,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/no/vector.svg
+135,Ivory Coast,Country / dependency,Country / dependency,322462,https://en.wikipedia.org/wiki/C%C3%B4te_d%27Ivoire,,ci,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ci/vector.svg
+136,Poland,Country / dependency,Country / dependency,312685,https://en.wikipedia.org/wiki/Poland,,pl,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pl/vector.svg
+137,Oman,Country / dependency,Country / dependency,309500,https://en.wikipedia.org/wiki/Oman,,om,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/om/vector.svg
+138,Italy,Country / dependency,Country / dependency,302068,https://en.wikipedia.org/wiki/Italy,,it,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/it/vector.svg
+139,Philippines,Country / dependency,Country / dependency,300000,https://en.wikipedia.org/wiki/Philippines,,ph,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ph/vector.svg
+140,Ecuador,Country / dependency,Country / dependency,283561,https://en.wikipedia.org/wiki/Ecuador,,ec,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ec/vector.svg
+141,Davida,Solar System object,Asteroid (belt),278985.994,https://en.wikipedia.org/wiki/511_Davida,"area computed from mean radius, assuming a sphere",,3.163,
+142,Burkina Faso,Country / dependency,Country / dependency,274200,https://en.wikipedia.org/wiki/Burkina_Faso,,bf,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bf/vector.svg
+143,New Zealand,Country / dependency,Country / dependency,268838,https://en.wikipedia.org/wiki/New_Zealand,,nz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/nz/vector.svg
+144,Gabon,Country / dependency,Country / dependency,267668,https://en.wikipedia.org/wiki/Gabon,,ga,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ga/vector.svg
+145,Western Sahara,Country / dependency,Country / dependency,266000,https://en.wikipedia.org/wiki/Western_Sahara,,eh,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/eh/vector.svg
+146,Guinea,Country / dependency,Country / dependency,245857,https://en.wikipedia.org/wiki/Guinea,,gn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gn/vector.svg
+147,United Kingdom,Country / dependency,Country / dependency,244376,https://en.wikipedia.org/wiki/United_Kingdom,,gb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gb/vector.svg
+148,Uganda,Country / dependency,Country / dependency,241550,https://en.wikipedia.org/wiki/Uganda,,ug,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ug/vector.svg
+149,Ghana,Country / dependency,Country / dependency,238537,https://en.wikipedia.org/wiki/Ghana,,gh,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gh/vector.svg
+150,Romania,Country / dependency,Country / dependency,238398,https://en.wikipedia.org/wiki/Romania,,ro,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ro/vector.svg
+151,Laos,Country / dependency,Country / dependency,236800,https://en.wikipedia.org/wiki/Laos,,la,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/la/vector.svg
+152,Sylvia,Solar System object,Asteroid (belt),235858.21,https://en.wikipedia.org/wiki/87_Sylvia,"area computed from mean radius, assuming a sphere",,3.48,
+153,Guyana,Country / dependency,Country / dependency,214969,https://en.wikipedia.org/wiki/Guyana,,gy,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gy/vector.svg
+154,Belarus,Country / dependency,Country / dependency,207600,https://en.wikipedia.org/wiki/Belarus,,by,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/by/vector.svg
+155,Kyrgyzstan,Country / dependency,Country / dependency,199949,https://en.wikipedia.org/wiki/Kyrgyzstan,,kg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/kg/vector.svg
+156,Senegal,Country / dependency,Country / dependency,196712,https://en.wikipedia.org/wiki/Senegal,,sn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sn/vector.svg
+157,Syria,Country / dependency,Country / dependency,185180,https://en.wikipedia.org/wiki/Syria,,sy,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sy/vector.svg
+158,Cambodia,Country / dependency,Country / dependency,181035,https://en.wikipedia.org/wiki/Cambodia,,kh,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/kh/vector.svg
+159,Somaliland,Country / dependency,Country / dependency,177000,https://en.wikipedia.org/wiki/Somaliland,,so,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/so/vector.svg
+160,Uruguay,Country / dependency,Country / dependency,176215,https://en.wikipedia.org/wiki/Uruguay,,uy,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/uy/vector.svg
+161,Suriname,Country / dependency,Country / dependency,163820,https://en.wikipedia.org/wiki/Suriname,,sr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sr/vector.svg
+162,Tunisia,Country / dependency,Country / dependency,163610,https://en.wikipedia.org/wiki/Tunisia,,tn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tn/vector.svg
+163,Psyche,Solar System object,Asteroid (belt),157632.553,https://en.wikipedia.org/wiki/16_Psyche,"area computed from mean radius, assuming a sphere",,2.92,
+164,Bangladesh,Country / dependency,Country / dependency,148460,https://en.wikipedia.org/wiki/Bangladesh,,bd,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bd/vector.svg
+165,Nepal,Country / dependency,Country / dependency,147181,https://en.wikipedia.org/wiki/Nepal,,np,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/np/vector.svg
+166,Tajikistan,Country / dependency,Country / dependency,144100,https://en.wikipedia.org/wiki/Tajikistan,,tj,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tj/vector.svg
+167,England,Country / dependency,Country / dependency,132932,https://en.wikipedia.org/wiki/England,,gb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gb/vector.svg
+168,Greece,Country / dependency,Country / dependency,131957,https://en.wikipedia.org/wiki/Greece,,gr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gr/vector.svg
+169,Nicaragua,Country / dependency,Country / dependency,130373,https://en.wikipedia.org/wiki/Nicaragua,,ni,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ni/vector.svg
+170,North Korea,Country / dependency,Country / dependency,120538,https://en.wikipedia.org/wiki/North_Korea,,kp,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/kp/vector.svg
+171,Malawi,Country / dependency,Country / dependency,118484,https://en.wikipedia.org/wiki/Malawi,,mw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mw/vector.svg
+172,Eritrea,Country / dependency,Country / dependency,117600,https://en.wikipedia.org/wiki/Eritrea,,er,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/er/vector.svg
+173,Benin,Country / dependency,Country / dependency,114763,https://en.wikipedia.org/wiki/Benin,,bj,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bj/vector.svg
+174,Honduras,Country / dependency,Country / dependency,112492,https://en.wikipedia.org/wiki/Honduras,,hn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/hn/vector.svg
+175,Liberia,Country / dependency,Country / dependency,111369,https://en.wikipedia.org/wiki/Liberia,,lr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/lr/vector.svg
+176,Bulgaria,Country / dependency,Country / dependency,110879,https://en.wikipedia.org/wiki/Bulgaria,,bg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bg/vector.svg
+177,Cuba,Country / dependency,Country / dependency,109884,https://en.wikipedia.org/wiki/Cuba,,cu,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cu/vector.svg
+178,Guatemala,Country / dependency,Country / dependency,108889,https://en.wikipedia.org/wiki/Guatemala,,gt,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gt/vector.svg
+179,Iceland,Country / dependency,Country / dependency,103000,https://en.wikipedia.org/wiki/Iceland,,is,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/is/vector.svg
+180,South Korea,Country / dependency,Country / dependency,100432,https://en.wikipedia.org/wiki/South_Korea,,kr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/kr/vector.svg
+181,Hungary,Country / dependency,Country / dependency,93025,https://en.wikipedia.org/wiki/Hungary,,hu,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/hu/vector.svg
+182,Portugal,Country / dependency,Country / dependency,92090,https://en.wikipedia.org/wiki/Portugal,,pt,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pt/vector.svg
+183,Jordan,Country / dependency,Country / dependency,89318,https://en.wikipedia.org/wiki/Jordan,,jo,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/jo/vector.svg
+184,Serbia,Country / dependency,Country / dependency,88499,https://en.wikipedia.org/wiki/Serbia,,rs,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/rs/vector.svg
+185,Azerbaijan,Country / dependency,Country / dependency,86600,https://en.wikipedia.org/wiki/Azerbaijan,,az,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/az/vector.svg
+186,Austria,Country / dependency,Country / dependency,83878,https://en.wikipedia.org/wiki/Austria,,at,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/at/vector.svg
+187,United Arab Emirates,Country / dependency,Country / dependency,83600,https://en.wikipedia.org/wiki/United_Arab_Emirates,,ae,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ae/vector.svg
+188,Scotland,Country / dependency,Country / dependency,80231,https://en.wikipedia.org/wiki/Scotland,,gb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gb/vector.svg
+189,Czech Republic,Country / dependency,Country / dependency,78871,https://en.wikipedia.org/wiki/Czech_Republic,,cz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cz/vector.svg
+190,Panama,Country / dependency,Country / dependency,75320,https://en.wikipedia.org/wiki/Panama,,pa,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pa/vector.svg
+191,Sierra Leone,Country / dependency,Country / dependency,72300,https://en.wikipedia.org/wiki/Sierra_Leone,,sl,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sl/vector.svg
+192,Ireland,Country / dependency,Country / dependency,70273,https://en.wikipedia.org/wiki/Ireland,,ie,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ie/vector.svg
+193,Georgia,Country / dependency,Country / dependency,69700,https://en.wikipedia.org/wiki/Georgia,,ge,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ge/vector.svg
+194,Sri Lanka,Country / dependency,Country / dependency,67240,https://en.wikipedia.org/wiki/Sri_Lanka,,lk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/lk/vector.svg
+195,Lithuania,Country / dependency,Country / dependency,65286,https://en.wikipedia.org/wiki/Lithuania,,lt,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/lt/vector.svg
+196,Latvia,Country / dependency,Country / dependency,64594,https://en.wikipedia.org/wiki/Latvia,,lv,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/lv/vector.svg
+197,Svalbard,Country / dependency,Country / dependency,62045,https://en.wikipedia.org/wiki/Svalbard,,sj,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sj/vector.svg
+198,Togo,Country / dependency,Country / dependency,56785,https://en.wikipedia.org/wiki/Togo,,tg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tg/vector.svg
+199,Croatia,Country / dependency,Country / dependency,56594,https://en.wikipedia.org/wiki/Croatia,,hr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/hr/vector.svg
+200,Bosnia and Herzegovina,Country / dependency,Country / dependency,51209,https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina,,ba,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ba/vector.svg
+201,Costa Rica,Country / dependency,Country / dependency,51180,https://en.wikipedia.org/wiki/Costa_Rica,,cr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cr/vector.svg
+202,Slovakia,Country / dependency,Country / dependency,49035,https://en.wikipedia.org/wiki/Slovakia,,sk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sk/vector.svg
+203,Dominican Republic,Country / dependency,Country / dependency,48670,https://en.wikipedia.org/wiki/Dominican_Republic,,do,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/do/vector.svg
+204,Estonia,Country / dependency,Country / dependency,45339,https://en.wikipedia.org/wiki/Estonia,,ee,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ee/vector.svg
+205,Denmark,Country / dependency,Country / dependency,42947,https://en.wikipedia.org/wiki/Denmark,,dk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/dk/vector.svg
+206,Netherlands,Country / dependency,Country / dependency,41865,https://en.wikipedia.org/wiki/Netherlands,,nl,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/nl/vector.svg
+207,Switzerland,Country / dependency,Country / dependency,41291,https://en.wikipedia.org/wiki/Switzerland,,ch,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ch/vector.svg
+208,Bhutan,Country / dependency,Country / dependency,38394,https://en.wikipedia.org/wiki/Bhutan,,bt,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bt/vector.svg
+209,Guinea-Bissau,Country / dependency,Country / dependency,36125,https://en.wikipedia.org/wiki/Guinea-Bissau,,gw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gw/vector.svg
+210,Taiwan,Country / dependency,Country / dependency,35980,https://en.wikipedia.org/wiki/Taiwan,,tw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tw/vector.svg
+211,Moldova,Country / dependency,Country / dependency,33847,https://en.wikipedia.org/wiki/Moldova,,md,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/md/vector.svg
+212,Belgium,Country / dependency,Country / dependency,30528,https://en.wikipedia.org/wiki/Belgium,,be,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/be/vector.svg
+213,Lesotho,Country / dependency,Country / dependency,30355,https://en.wikipedia.org/wiki/Lesotho,,ls,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ls/vector.svg
+214,Armenia,Country / dependency,Country / dependency,29743,https://en.wikipedia.org/wiki/Armenia,,am,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/am/vector.svg
+215,Solomon Islands,Country / dependency,Country / dependency,28896,https://en.wikipedia.org/wiki/Solomon_Islands,,sb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sb/vector.svg
+216,Albania,Country / dependency,Country / dependency,28748,https://en.wikipedia.org/wiki/Albania,,al,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/al/vector.svg
+217,Equatorial Guinea,Country / dependency,Country / dependency,28051,https://en.wikipedia.org/wiki/Equatorial_Guinea,,gq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gq/vector.svg
+218,Burundi,Country / dependency,Country / dependency,27834,https://en.wikipedia.org/wiki/Burundi,,bi,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bi/vector.svg
+219,Haiti,Country / dependency,Country / dependency,27750,https://en.wikipedia.org/wiki/Haiti,,ht,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ht/vector.svg
+220,Rwanda,Country / dependency,Country / dependency,26338,https://en.wikipedia.org/wiki/Rwanda,,rw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/rw/vector.svg
+221,North Macedonia,Country / dependency,Country / dependency,25713,https://en.wikipedia.org/wiki/North_Macedonia,,mk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mk/vector.svg
+222,Djibouti,Country / dependency,Country / dependency,23200,https://en.wikipedia.org/wiki/Djibouti,,dj,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/dj/vector.svg
+223,Belize,Country / dependency,Country / dependency,22965,https://en.wikipedia.org/wiki/Belize,,bz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bz/vector.svg
+224,Israel,Country / dependency,Country / dependency,21937,https://en.wikipedia.org/wiki/Israel,,il,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/il/vector.svg
+225,Wales,Country / dependency,Country / dependency,21218,https://en.wikipedia.org/wiki/Wales,,gb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gb/vector.svg
+226,El Salvador,Country / dependency,Country / dependency,21041,https://en.wikipedia.org/wiki/El_Salvador,,sv,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sv/vector.svg
+227,Slovenia,Country / dependency,Country / dependency,20273,https://en.wikipedia.org/wiki/Slovenia,,si,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/si/vector.svg
+228,New Caledonia,Country / dependency,Country / dependency,18575,https://en.wikipedia.org/wiki/New_Caledonia,,nc,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/nc/vector.svg
+229,Fiji,Country / dependency,Country / dependency,18272,https://en.wikipedia.org/wiki/Fiji,,fj,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/fj/vector.svg
+230,Kuwait,Country / dependency,Country / dependency,17818,https://en.wikipedia.org/wiki/Kuwait,,kw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/kw/vector.svg
+231,Eswatini,Country / dependency,Country / dependency,17363,https://en.wikipedia.org/wiki/Eswatini,,sz,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sz/vector.svg
+232,Timor-Leste,Country / dependency,Country / dependency,14874,https://en.wikipedia.org/wiki/Timor-Leste,,tl,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tl/vector.svg
+233,Northern Ireland,Country / dependency,Country / dependency,14330,https://en.wikipedia.org/wiki/Northern_Ireland,,gb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gb/vector.svg
+234,Montenegro,Country / dependency,Country / dependency,13888,https://en.wikipedia.org/wiki/Montenegro,,me,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/me/vector.svg
+235,Bahamas,Country / dependency,Country / dependency,13880,https://en.wikipedia.org/wiki/Bahamas,,bs,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bs/vector.svg
+236,Vanuatu,Country / dependency,Country / dependency,12189,https://en.wikipedia.org/wiki/Vanuatu,,vu,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/vu/vector.svg
+237,Falkland Islands,Country / dependency,Country / dependency,12173,https://en.wikipedia.org/wiki/Falkland_Islands,,fk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/fk/vector.svg
+238,Qatar,Country / dependency,Country / dependency,11586,https://en.wikipedia.org/wiki/Qatar,,qa,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/qa/vector.svg
+239,The Gambia,Country / dependency,Country / dependency,11295,https://en.wikipedia.org/wiki/The_Gambia,,gm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gm/vector.svg
+240,Jamaica,Country / dependency,Country / dependency,10991,https://en.wikipedia.org/wiki/Jamaica,,jm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/jm/vector.svg
+241,Kosovo,Country / dependency,Country / dependency,10887,https://en.wikipedia.org/wiki/Kosovo,,,1,
+242,Lebanon,Country / dependency,Country / dependency,10452,https://en.wikipedia.org/wiki/Lebanon,,lb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/lb/vector.svg
+243,Cyprus,Country / dependency,Country / dependency,9251,https://en.wikipedia.org/wiki/Cyprus,,cy,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cy/vector.svg
+244,Puerto Rico,Country / dependency,Country / dependency,9100,https://en.wikipedia.org/wiki/Puerto_Rico,,pr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pr/vector.svg
+245,Abkhazia,Country / dependency,Country / dependency,8665,https://en.wikipedia.org/wiki/Abkhazia,,,1,
+246,French Southern Territories,Country / dependency,Country / dependency,7747,https://en.wikipedia.org/wiki/French_Southern_Territories,,tf,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tf/vector.svg
+247,Palestine,Country / dependency,Country / dependency,6020,https://en.wikipedia.org/wiki/Palestine,,,1,
+248,Brunei,Country / dependency,Country / dependency,5765,https://en.wikipedia.org/wiki/Brunei,,bn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bn/vector.svg
+249,Trinidad and Tobago,Country / dependency,Country / dependency,5127,https://en.wikipedia.org/wiki/Trinidad_and_Tobago,,tt,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tt/vector.svg
+250,French Polynesia,Country / dependency,Country / dependency,4167,https://en.wikipedia.org/wiki/French_Polynesia,,pf,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pf/vector.svg
+251,Transnistria,Country / dependency,Country / dependency,4163,https://en.wikipedia.org/wiki/Transnistria,,,1,
+252,Cape Verde,Country / dependency,Country / dependency,4033,https://en.wikipedia.org/wiki/Cape_Verde,,cv,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cv/vector.svg
+253,South Georgia and the South Sandwich Islands,Country / dependency,Country / dependency,3903,https://en.wikipedia.org/wiki/South_Georgia_and_the_South_Sandwich_Islands,,gs,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gs/vector.svg
+254,South Ossetia,Country / dependency,Country / dependency,3900,https://en.wikipedia.org/wiki/South_Ossetia,,,1,
+255,Northern Cyprus,Country / dependency,Country / dependency,3355,https://en.wikipedia.org/wiki/Northern_Cyprus,,,1,
+256,Arrokoth,Solar System object,Trans-Neptunian object,3156.955,https://en.wikipedia.org/wiki/486958_Arrokoth,"area computed from mean radius, assuming a sphere",,44.231,
+257,Ida,Solar System object,Asteroid (belt),3097.485,https://en.wikipedia.org/wiki/243_Ida,"area computed from mean radius, assuming a sphere",,2.861,
+258,Samoa,Country / dependency,Country / dependency,2842,https://en.wikipedia.org/wiki/Samoa,,ws,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ws/vector.svg
+259,Luxembourg,Country / dependency,Country / dependency,2586,https://en.wikipedia.org/wiki/Luxembourg,,lu,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/lu/vector.svg
+260,Mauritius,Country / dependency,Country / dependency,2096,https://en.wikipedia.org/wiki/Mauritius,,mu,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mu/vector.svg
+261,Comoros,Country / dependency,Country / dependency,1861,https://en.wikipedia.org/wiki/Comoros,,km,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/km/vector.svg
+262,Aland,Country / dependency,Country / dependency,1581,https://en.wikipedia.org/wiki/Aland,,ax,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ax/vector.svg
+263,Phobos,Solar System object,Moon (Mars),1548.303,https://en.wikipedia.org/wiki/Phobos_(moon),"area computed from mean radius, assuming a sphere",,1.523679,
+264,Faroe Islands,Country / dependency,Country / dependency,1393,https://en.wikipedia.org/wiki/Faroe_Islands,,fo,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/fo/vector.svg
+265,Hong Kong,Country / dependency,Country / dependency,1114,https://en.wikipedia.org/wiki/Hong_Kong,,hk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/hk/vector.svg
+266,Sao Tome and Principe,Country / dependency,Country / dependency,964,https://en.wikipedia.org/wiki/Sao_Tome_and_Principe,,st,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/st/vector.svg
+267,Turks and Caicos Islands,Country / dependency,Country / dependency,948,https://en.wikipedia.org/wiki/Turks_and_Caicos_Islands,,tc,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tc/vector.svg
+268,Eros,Solar System object,Near-Earth asteroid,890.91,https://en.wikipedia.org/wiki/433_Eros,"area computed from mean radius, assuming a sphere",,1.4579,
+269,Kiribati,Country / dependency,Country / dependency,811,https://en.wikipedia.org/wiki/Kiribati,,ki,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ki/vector.svg
+270,Bahrain,Country / dependency,Country / dependency,778,https://en.wikipedia.org/wiki/Bahrain,,bh,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bh/vector.svg
+271,Dominica,Country / dependency,Country / dependency,750,https://en.wikipedia.org/wiki/Dominica,,dm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/dm/vector.svg
+272,Tonga,Country / dependency,Country / dependency,747,https://en.wikipedia.org/wiki/Tonga,,to,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/to/vector.svg
+273,Singapore,Country / dependency,Country / dependency,745,https://en.wikipedia.org/wiki/Singapore,,sg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sg/vector.svg
+274,Micronesia,Country / dependency,Country / dependency,702,https://en.wikipedia.org/wiki/Micronesia,,,1,
+275,Saint Lucia,Country / dependency,Country / dependency,616,https://en.wikipedia.org/wiki/Saint_Lucia,,lc,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/lc/vector.svg
+276,Isle of Man,Country / dependency,Country / dependency,572,https://en.wikipedia.org/wiki/Isle_of_Man,,im,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/im/vector.svg
+277,Guam,Country / dependency,Country / dependency,541,https://en.wikipedia.org/wiki/Guam,,gu,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gu/vector.svg
+278,Deimos,Solar System object,Moon (Mars),494.02,https://en.wikipedia.org/wiki/Deimos_(moon),"area computed from mean radius, assuming a sphere",,1.523679,
+279,Gaspra,Solar System object,Asteroid (belt),493.39,https://en.wikipedia.org/wiki/951_Gaspra,"area computed from mean radius, assuming a sphere",,2.2099,
+280,Andorra,Country / dependency,Country / dependency,468,https://en.wikipedia.org/wiki/Andorra,,ad,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ad/vector.svg
+281,Palau,Country / dependency,Country / dependency,459,https://en.wikipedia.org/wiki/Palau,,pw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pw/vector.svg
+282,Northern Mariana Islands,Country / dependency,Country / dependency,457,https://en.wikipedia.org/wiki/Northern_Mariana_Islands,,,1,
+283,Seychelles,Country / dependency,Country / dependency,457,https://en.wikipedia.org/wiki/Seychelles,,sc,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sc/vector.svg
+284,Curacao,Country / dependency,Country / dependency,444,https://en.wikipedia.org/wiki/Curacao,,cw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cw/vector.svg
+285,Antigua and Barbuda,Country / dependency,Country / dependency,442,https://en.wikipedia.org/wiki/Antigua_and_Barbuda,,ag,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ag/vector.svg
+286,Barbados,Country / dependency,Country / dependency,431,https://en.wikipedia.org/wiki/Barbados,,bb,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bb/vector.svg
+287,Halley's Comet,Solar System object,Comet,415.476,https://en.wikipedia.org/wiki/Halley%27s_Comet,"area computed from mean radius, assuming a sphere",,17.737,
+288,Heard Island and McDonald Islands,Country / dependency,Country / dependency,412,https://en.wikipedia.org/wiki/Heard_Island_and_McDonald_Islands,,hm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/hm/vector.svg
+289,"Saint Helena, Ascension and Tristan da Cunha",Country / dependency,Country / dependency,394,"https://en.wikipedia.org/wiki/Saint_Helena,_Ascension_and_Tristan_da_Cunha",,sh,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sh/vector.svg
+290,Saint Vincent and the Grenadines,Country / dependency,Country / dependency,389,https://en.wikipedia.org/wiki/Saint_Vincent_and_the_Grenadines,,vc,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/vc/vector.svg
+291,Jan Mayen,Country / dependency,Country / dependency,377,https://en.wikipedia.org/wiki/Jan_Mayen,,sj,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sj/vector.svg
+292,U.S. Virgin Islands,Country / dependency,Country / dependency,347,https://en.wikipedia.org/wiki/United_States_Virgin_Islands,,vi,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/vi/vector.svg
+293,Grenada,Country / dependency,Country / dependency,345,https://en.wikipedia.org/wiki/Grenada,,gd,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gd/vector.svg
+294,Malta,Country / dependency,Country / dependency,315,https://en.wikipedia.org/wiki/Malta,,mt,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mt/vector.svg
+295,Maldives,Country / dependency,Country / dependency,300,https://en.wikipedia.org/wiki/Maldives,,mv,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mv/vector.svg
+296,Bonaire,Country / dependency,Country / dependency,288,https://en.wikipedia.org/wiki/Bonaire,,bq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bq/vector.svg
+297,Cayman Islands,Country / dependency,Country / dependency,264,https://en.wikipedia.org/wiki/Cayman_Islands,,ky,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ky/vector.svg
+298,Saint Kitts and Nevis,Country / dependency,Country / dependency,261,https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis,,kn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/kn/vector.svg
+299,Niue,Country / dependency,Country / dependency,260,https://en.wikipedia.org/wiki/Niue,,nu,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/nu/vector.svg
+300,Akrotiri and Dhekelia,Country / dependency,Country / dependency,254,https://en.wikipedia.org/wiki/Akrotiri_and_Dhekelia,,,1,
+301,Saint Pierre and Miquelon,Country / dependency,Country / dependency,242,https://en.wikipedia.org/wiki/Saint_Pierre_and_Miquelon,,pm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pm/vector.svg
+302,Cook Islands,Country / dependency,Country / dependency,236,https://en.wikipedia.org/wiki/Cook_Islands,,ck,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ck/vector.svg
+303,American Samoa,Country / dependency,Country / dependency,199,https://en.wikipedia.org/wiki/American_Samoa,,as,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/as/vector.svg
+304,Marshall Islands,Country / dependency,Country / dependency,181,https://en.wikipedia.org/wiki/Marshall_Islands,,,1,
+305,Aruba,Country / dependency,Country / dependency,180,https://en.wikipedia.org/wiki/Aruba,,aw,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aw/vector.svg
+306,Easter Island,Country / dependency,Country / dependency,163,https://en.wikipedia.org/wiki/Easter_Island,,,1,
+307,Liechtenstein,Country / dependency,Country / dependency,160,https://en.wikipedia.org/wiki/Liechtenstein,,li,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/li/vector.svg
+308,Peter I Island,Country / dependency,Country / dependency,154,https://en.wikipedia.org/wiki/Peter_I_Island,,aq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/aq/vector.svg
+309,British Virgin Islands,Country / dependency,Country / dependency,151,https://en.wikipedia.org/wiki/British_Virgin_Islands,,vg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/vg/vector.svg
+310,Wallis and Futuna,Country / dependency,Country / dependency,142,https://en.wikipedia.org/wiki/Wallis_and_Futuna,,wf,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/wf/vector.svg
+311,Christmas Island,Country / dependency,Country / dependency,135,https://en.wikipedia.org/wiki/Christmas_Island,,cx,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cx/vector.svg
+312,Jersey,Country / dependency,Country / dependency,116,https://en.wikipedia.org/wiki/Jersey,,,1,
+313,Montserrat,Country / dependency,Country / dependency,103,https://en.wikipedia.org/wiki/Montserrat,,ms,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ms/vector.svg
+314,Anguilla,Country / dependency,Country / dependency,91,https://en.wikipedia.org/wiki/Anguilla,,ai,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/ai/vector.svg
+315,Guernsey,Country / dependency,Country / dependency,78,https://en.wikipedia.org/wiki/Guernsey,,gg,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gg/vector.svg
+316,San Marino,Country / dependency,Country / dependency,61,https://en.wikipedia.org/wiki/San_Marino,,sm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sm/vector.svg
+317,British Indian Ocean Territory,Country / dependency,Country / dependency,60,https://en.wikipedia.org/wiki/British_Indian_Ocean_Territory,,io,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/io/vector.svg
+318,Bermuda,Country / dependency,Country / dependency,54,https://en.wikipedia.org/wiki/Bermuda,,bm,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bm/vector.svg
+319,Saint Martin,Country / dependency,Country / dependency,53,https://en.wikipedia.org/wiki/Saint_Martin,,mf,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mf/vector.svg
+320,67P/Churyumov–Gerasimenko,Solar System object,Comet,50.265,https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko,"area computed from mean radius, assuming a sphere",,3.457,
+321,Bouvet Island,Country / dependency,Country / dependency,49,https://en.wikipedia.org/wiki/Bouvet_Island,,bv,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bv/vector.svg
+322,Pitcairn Islands,Country / dependency,Country / dependency,47,https://en.wikipedia.org/wiki/Pitcairn_Islands,,pn,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/pn/vector.svg
+323,Norfolk Island,Country / dependency,Country / dependency,36,https://en.wikipedia.org/wiki/Norfolk_Island,,nf,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/nf/vector.svg
+324,Sint Maarten,Country / dependency,Country / dependency,34,https://en.wikipedia.org/wiki/Sint_Maarten,,sx,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/sx/vector.svg
+325,U.S. Minor Outlying Islands,Country / dependency,Country / dependency,34,https://en.wikipedia.org/wiki/United_States_Minor_Outlying_Islands,,,1,
+326,Macau,Country / dependency,Country / dependency,33,https://en.wikipedia.org/wiki/Macau,,mo,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mo/vector.svg
+327,Tuvalu,Country / dependency,Country / dependency,26,https://en.wikipedia.org/wiki/Tuvalu,,,1,
+328,Saint Barthelemy,Country / dependency,Country / dependency,22,https://en.wikipedia.org/wiki/Saint_Barthelemy,,bl,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bl/vector.svg
+329,Nauru,Country / dependency,Country / dependency,21,https://en.wikipedia.org/wiki/Nauru,,nr,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/nr/vector.svg
+330,Sint Eustatius,Country / dependency,Country / dependency,21,https://en.wikipedia.org/wiki/Sint_Eustatius,,bq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bq/vector.svg
+331,Cocos (Keeling) Islands,Country / dependency,Country / dependency,14,https://en.wikipedia.org/wiki/Cocos_(Keeling)_Islands,,cc,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/cc/vector.svg
+332,Saba,Country / dependency,Country / dependency,13,https://en.wikipedia.org/wiki/Saba,,bq,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/bq/vector.svg
+333,Tokelau,Country / dependency,Country / dependency,12,https://en.wikipedia.org/wiki/Tokelau,,tk,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/tk/vector.svg
+334,Gibraltar,Country / dependency,Country / dependency,6.8,https://en.wikipedia.org/wiki/Gibraltar,,gi,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/gi/vector.svg
+335,Clipperton Island,Country / dependency,Country / dependency,6,https://en.wikipedia.org/wiki/Clipperton_Island,,,1,
+336,Ashmore and Cartier Islands,Country / dependency,Country / dependency,5,https://en.wikipedia.org/wiki/Ashmore_and_Cartier_Islands,,,1,
+337,Coral Sea Islands,Country / dependency,Country / dependency,3,https://en.wikipedia.org/wiki/Coral_Sea_Islands,,,1,
+338,Ryugu,Solar System object,Near-Earth asteroid,2.351,https://en.wikipedia.org/wiki/162173_Ryugu,"area computed from mean radius, assuming a sphere",,1.1896,
+339,Spratly Islands,Country / dependency,Country / dependency,2,https://en.wikipedia.org/wiki/Spratly_Islands,,,1,
+340,Monaco,Country / dependency,Country / dependency,2,https://en.wikipedia.org/wiki/Monaco,,mc,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/mc/vector.svg
+341,Bennu,Solar System object,Near-Earth asteroid,0.754,https://en.wikipedia.org/wiki/101955_Bennu,"area computed from mean radius, assuming a sphere",,1.1264,
+342,Vatican City,Country / dependency,Country / dependency,0.44,https://en.wikipedia.org/wiki/Vatican_City,,va,1,https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/va/vector.svg
+343,Itokawa,Solar System object,Near-Earth asteroid,0.376,https://en.wikipedia.org/wiki/25143_Itokawa,"area computed from mean radius, assuming a sphere",,1.3241,
+344,Dimorphos,Solar System object,Asteroid moon (Didymos),0.091,https://en.wikipedia.org/wiki/Dimorphos,"area computed from mean radius, assuming a sphere",,1.6446,

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>How big is it?</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<style>
+:root { box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+/* Fixed-size thumbnail box so every row lines up regardless of the real
+   object's size — see app.js for how each image/shape is resolved. */
+.thumb { display: inline-flex; align-items: center; justify-content: center;
+         width: 44px; height: 44px; }
+.thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.thumb-empty { color: var(--pico-muted-color); font-size: 0.8rem; }
+/* Let the results table scroll horizontally rather than squeezing its
+   columns or overflowing the page (Pico's own recommended pattern for
+   wide tables) -- and below Pico's 576px breakpoint, where .container
+   still carries 1rem of left/right padding, let the table bleed out to
+   the actual screen edge instead of losing that width for no reason.
+   Everything else on the page (headings, controls) keeps its padding. */
+figure { overflow-x: auto; }
+@media (max-width: 575.98px) {
+  figure { margin-inline: calc(var(--pico-spacing) * -1); }
+}
+/* Comparison tab: same thumbnail mechanism as the table, just bigger,
+   since there are only ever two of them on screen at once. */
+#compare-result .thumb { width: 96px; height: 96px; }
+.compare-card { text-align: center; }
+/* Title + tabs share one condensed header row (Pico's nav auto-spaces a
+   first and last <ul> apart), so the h1 needs to drop its normal block
+   margin/size to sit inline at the nav's height instead of stacking. */
+nav h1 { margin: 0; font-size: 1.1rem; }
+/* Ocean thumbnails: some Wikipedia globe renders (Atlantic, Indian, Arctic)
+   are square PNGs without real alpha transparency around the circular
+   globe, so the square canvas corners show through. Masking the box to a
+   circle crops those corners away regardless of the source image itself. */
+.thumb-ocean { border-radius: 50%; overflow: hidden; }
+.thumb-ocean img { width: 100%; height: 100%; object-fit: cover; }
+/* Override Pico's own dark-theme tokens for a near-black page (matching
+   the astronomical images' black background), rather than hand-styling
+   individual elements like the table. */
+:root[data-theme="dark"] {
+  --pico-background-color: #000;
+  --pico-card-background-color: #000;
+  --pico-card-sectioning-background-color: #000;
+}
+/* mapsicon shapes are solid black silhouettes; invert them in dark mode
+   so they stay visible instead of turning into black squares. */
+@media (prefers-color-scheme: dark) {
+  .thumb-shape { filter: invert(1); }
+}
+:root[data-theme="dark"] .thumb-shape { filter: invert(1); }
+</style>
+</head>
+<body>
+<main class="container">
+
+<nav aria-label="Sections">
+<ul>
+  <li><h1>How big is it?</h1><p><small>Surface area in the solar system.</small></p></li>
+</ul>
+<ul>
+  <li><button type="button" id="tab-list" role="tab" aria-selected="true" aria-controls="panel-list">Browse</button></li>
+  <li><button type="button" id="tab-compare" role="tab" aria-selected="false" aria-controls="panel-compare" class="secondary">Compare</button></li>
+</ul>
+</nav>
+
+<section id="panel-list" role="tabpanel" aria-labelledby="tab-list">
+<article>
+<div class="grid">
+  <input type="search" id="q" placeholder="Filter by name&hellip;" autocomplete="off">
+  <select id="cat">
+    <option value="">All categories</option>
+    <option>Solar System object</option>
+    <option>Ocean</option>
+    <option>Continent</option>
+    <option>Country / dependency</option>
+  </select>
+</div>
+<p><small id="count-label"></small></p>
+<figure>
+<table role="grid">
+<thead>
+<tr>
+  <th scope="col" data-key="rank">#</th>
+  <th scope="col">Image</th>
+  <th scope="col" data-key="name">Name</th>
+  <th scope="col" data-key="category">Category</th>
+  <th scope="col" data-key="area_km2">Area (km&sup2;)</th>
+  <th scope="col" data-key="dist_from_sun_au">Distance from Sun</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</figure>
+</article>
+</section>
+
+<section id="panel-compare" role="tabpanel" aria-labelledby="tab-compare" hidden>
+<article>
+<div class="grid">
+  <label>First
+    <input list="all-names" id="item-a" placeholder="e.g. Ceres" autocomplete="off">
+  </label>
+  <label>Second
+    <input list="all-names" id="item-b" placeholder="e.g. Democratic Republic of the Congo" autocomplete="off">
+  </label>
+</div>
+<datalist id="all-names"></datalist>
+<div id="compare-result" aria-live="polite"><small>Type two names above (countries, moons, oceans, asteroids&hellip;) to compare their surface areas.</small></div>
+</article>
+</section>
+
+<details>
+<summary>Methodology &amp; sources</summary>
+<ul>
+<li>Country/dependency area: total area (land + inland water) &mdash; <a href="https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area" target="_blank" rel="noopener">Wikipedia: List of countries and dependencies by area</a> (UN Statistics Division, FAO, CIA World Factbook)</li>
+<li>Astronomical body area: spherical surface area (4&pi;r&sup2;) &mdash; <a href="https://en.wikipedia.org/wiki/List_of_Solar_System_objects_by_size" target="_blank" rel="noopener">Wikipedia: List of Solar System objects by size</a>; smaller bodies computed from mean radius (hover a row's name for a note)</li>
+<li>Ocean/continent area: standard reference figures &mdash; NOAA; <a href="https://en.wikipedia.org/wiki/Continent" target="_blank" rel="noopener">Wikipedia: Continent</a></li>
+<li>Distance from Sun: each body's own Wikipedia infobox (semi-major axis); moons and all Earth features use their parent body's distance</li>
+<li>Images: the CSV's <code>image_url</code> column is the source of truth (edit a cell to override it) &mdash; pre-filled for 256 territories via <a href="https://github.com/djaiss/mapsicon" target="_blank" rel="noopener">mapsicon</a>; blank cells fall back to a live lookup via the <a href="https://www.mediawiki.org/wiki/API:REST_API" target="_blank" rel="noopener">Wikipedia REST API</a></li>
+</ul>
+<p><a href="solar_system_and_earth_by_area.csv" download="solar_system_and_earth_by_area.csv">Download the full dataset as CSV</a></p>
+</details>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
