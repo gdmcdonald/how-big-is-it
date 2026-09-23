@@ -25,6 +25,19 @@ const KM_PER_AU = 149597870.7; // IAU-defined astronomical unit, exact
 let DATA = [];
 let DATA_BY_RANK = new Map();
 let RANK_SORTED = []; // DATA sorted by rank asc — lets the Game tab sample pairs by "distance" in the size ordering, independent of row insertion order in the CSV
+let CATEGORY_INDEX = new Map(); // category -> indices into RANK_SORTED — lets the Game tab weight pair sampling by category instead of by raw row count (countries are ~80% of all rows)
+let CATEGORY_WEIGHTS = []; // [{category, weight}], derived from CATEGORY_INDEX — see CATEGORY_BALANCE
+
+// Tunable knob, 0 to 1, for how much the Game tab's category mix departs
+// from the dataset's raw row counts (countries are ~80% of all 344 rows,
+// so at 0 almost every round involves one; at 1 every category — Solar
+// System object, Ocean, Continent, Country/dependency — is equally likely
+// regardless of how many rows it actually has). Per-category weight is
+// count^(1 - CATEGORY_BALANCE): 0 -> count^1, exactly proportional to raw
+// count (equivalent to a plain uniform pick over all rows); 1 -> count^0
+// = 1 for every category, completely flat; 0.5 -> sqrt(count), a
+// middle ground that softens the extremes at both ends.
+const CATEGORY_BALANCE = 0.7;
 let EARTH_AREA = 510064470;
 let sortKey = "rank";
 let sortAsc = true;
@@ -78,6 +91,15 @@ async function loadData() {
   DATA = parsed.data.map(coerceRecord).filter(d => d.name && !Number.isNaN(d.rank));
   DATA_BY_RANK = new Map(DATA.map(d => [String(d.rank), d]));
   RANK_SORTED = DATA.slice().sort((a, b) => a.rank - b.rank);
+  CATEGORY_INDEX = new Map();
+  RANK_SORTED.forEach((d, idx) => {
+    if (!CATEGORY_INDEX.has(d.category)) CATEGORY_INDEX.set(d.category, []);
+    CATEGORY_INDEX.get(d.category).push(idx);
+  });
+  CATEGORY_WEIGHTS = Array.from(CATEGORY_INDEX.entries()).map(([category, indices]) => ({
+    category,
+    weight: Math.pow(indices.length, 1 - CATEGORY_BALANCE),
+  }));
   const earth = DATA.find(d => d.name === "Earth" && d.category === "Solar System object");
   if (earth) EARTH_AREA = earth.area_km2;
 }
@@ -313,22 +335,33 @@ function updateCompare() {
 
 /* -------------------------------- Game tool ------------------------------
  * Guess-which-is-bigger, 10 fixed rounds, +1 per correct guess, 0 per miss.
+ * All 20 row-slots across those 10 rounds are drawn without replacement —
+ * generateGameRounds threads one `used` Set through every pick for the
+ * whole game, so no row appears twice in the same 10-question game.
  *
  * Pair sampling varies by difficulty, all drawn from RANK_SORTED (DATA in
  * size order) so "distance between two objects" just means "gap between
- * their indices in that array" — nothing to do with the CSV's row order:
- *   - easy:   two fully random indices — sometimes a landslide, sometimes
- *              a coin flip, and that unpredictability is the point.
- *   - medium: one random index, the other offset by a *skewed* random gap
- *              (small gaps much likelier than big ones, no hard cutoff) in
- *              a random direction — "usually similar-ish, occasionally not"
- *              rather than strict neighbours.
- *   - hard:   same skewed-gap sampling as medium, but no name shown (image
- *              only) until the reveal. Draws from the same full pool as
- *              the other tiers — every row resolves an image the same way
- *              the table itself does (image_url/shape_code, falling back
- *              to a live Wikipedia lookup), so there's no separate
- *              image-availability filter here either.
+ * their indices in that array" — nothing to do with the CSV's row order.
+ * The anchor pick (see pickCategoryWeightedIndex) is always category-
+ * weighted per CATEGORY_BALANCE — countries are ~80% of all 344 rows by
+ * count alone, so leaving this to a plain per-row random pick would make
+ * almost every round involve one:
+ *   - easy:   two fully random (category-weighted) picks, independent of
+ *              each other — sometimes a landslide, sometimes a coin flip,
+ *              and that unpredictability is the point.
+ *   - medium: one category-weighted anchor, the other offset by a *skewed*
+ *              random gap (small gaps much likelier than big ones, no hard
+ *              cutoff) in a random direction — "usually similar-ish,
+ *              occasionally not" rather than strict neighbours. This
+ *              second pick is NOT category-weighted — it has to stay
+ *              purely distance-based, or "similar size" stops meaning
+ *              anything.
+ *   - hard:   same anchor + skewed-gap sampling as medium, but no name
+ *              shown (image only) until the reveal. Draws from the same
+ *              full pool as the other tiers — every row resolves an image
+ *              the same way the table itself does (image_url/shape_code,
+ *              falling back to a live Wikipedia lookup), so there's no
+ *              separate image-availability filter here either.
  * -------------------------------------------------------------------- */
 
 // Exponential-ish skew: most gaps land small (mean ~8), tapering off with
@@ -339,28 +372,86 @@ function skewedGap() {
   return Math.min(gap, 150);
 }
 
-function pickIndexPair(poolLen, weighted) {
-  const i = Math.floor(Math.random() * poolLen);
+// Picks a row with each *category* weighted by CATEGORY_WEIGHTS (see that
+// constant's comment), rather than each row weighted equally — a plain
+// per-row pick would be proportional to raw count, and countries are
+// ~80% of all 344 rows, so almost every round would involve one.
+// Picks a row with each *category* weighted by CATEGORY_WEIGHTS (see that
+// constant's comment), rather than each row weighted equally — a plain
+// per-row pick would be proportional to raw count, and countries are
+// ~80% of all 344 rows, so almost every round would involve one.
+// `used` (a Set of RANK_SORTED indices already dealt out this game) is
+// excluded row-by-row; a category left with zero remaining members drops
+// out of the weighting entirely for this pick rather than ever being
+// selected and failing.
+function pickCategoryWeightedIndex(used) {
+  const available = CATEGORY_WEIGHTS
+    .map(entry => ({
+      weight: entry.weight,
+      members: CATEGORY_INDEX.get(entry.category).filter(idx => !used.has(idx)),
+    }))
+    .filter(entry => entry.members.length > 0);
+  const totalWeight = available.reduce((sum, e) => sum + e.weight, 0);
+  let r = Math.random() * totalWeight;
+  let chosen = available[available.length - 1];
+  for (const entry of available) {
+    r -= entry.weight;
+    if (r <= 0) { chosen = entry; break; }
+  }
+  return chosen.members[Math.floor(Math.random() * chosen.members.length)];
+}
+
+// Medium/hard's partner pick: starts at the intended skewed gap and
+// direction, then widens outward (alternating direction each step) until
+// landing on an index that's in range and not already used this game.
+// Only ever has to widen when the initial offset collides with a row from
+// an earlier round — rare, since at most 18 other rows are excluded out of
+// 344 — so this stays close to the original distance almost every time.
+function pickNearbyUnusedIndex(i, used) {
+  const startGap = skewedGap();
+  const startDir = Math.random() < 0.5 ? -1 : 1;
+  for (let radius = startGap; radius < RANK_SORTED.length; radius++) {
+    for (const dir of [startDir, -startDir]) {
+      const j = i + dir * radius;
+      if (j >= 0 && j < RANK_SORTED.length && j !== i && !used.has(j)) return j;
+    }
+  }
+  // Unreachable in practice (a full game only ever uses 20 of 344 rows),
+  // but a defensive fallback rather than returning undefined.
+  for (let k = 0; k < RANK_SORTED.length; k++) {
+    if (k !== i && !used.has(k)) return k;
+  }
+  return i === 0 ? 1 : 0;
+}
+
+function pickIndexPair(weighted, used) {
+  const i = pickCategoryWeightedIndex(used);
   let j;
   if (!weighted) {
-    do { j = Math.floor(Math.random() * poolLen); } while (j === i);
+    // Easy: the second pick is just as independent as the first, so it
+    // gets the same category-balancing rather than reverting to raw
+    // counts — excluding i too, since it isn't in `used` yet at this point.
+    const excludeForJ = new Set(used);
+    excludeForJ.add(i);
+    j = pickCategoryWeightedIndex(excludeForJ);
   } else {
-    const dir = Math.random() < 0.5 ? -1 : 1;
-    j = Math.max(0, Math.min(poolLen - 1, i + dir * skewedGap()));
-    if (j === i) j = (i === poolLen - 1) ? i - 1 : i + 1;
+    // Medium/hard: the second pick has to stay purely distance-based from
+    // the anchor — that's the entire "similar size" mechanic — so only the
+    // anchor itself is category-weighted, not this one.
+    j = pickNearbyUnusedIndex(i, used);
   }
   return [i, j];
 }
 
 function generateGameRounds(difficulty) {
   const weighted = difficulty !== "easy";
+  const used = new Set(); // shared across all 10 rounds, so nothing repeats within one game
   const rounds = [];
-  let guardCount = 0;
-  while (rounds.length < 10 && guardCount < 1000) {
-    guardCount++;
-    const [i, j] = pickIndexPair(RANK_SORTED.length, weighted);
-    const a = RANK_SORTED[i], b = RANK_SORTED[j];
-    rounds.push({ a, b, guess: null, correct: null });
+  for (let n = 0; n < 10; n++) {
+    const [i, j] = pickIndexPair(weighted, used);
+    used.add(i);
+    used.add(j);
+    rounds.push({ a: RANK_SORTED[i], b: RANK_SORTED[j], guess: null, correct: null });
   }
   return rounds;
 }
