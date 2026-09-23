@@ -59,6 +59,13 @@ nav h1 { margin: 0; font-size: 1.1rem; }
   .thumb-shape { filter: invert(1); }
 }
 :root[data-theme="dark"] .thumb-shape { filter: invert(1); }
+/* End-of-game review table: split into three real columns (left object /
+   symbol / right object) rather than one inline blob, aligned toward the
+   symbol in the middle, so the two objects line up consistently down the
+   whole list instead of each row wandering to a different width. */
+#game-review-body td:nth-child(2) { text-align: right; white-space: nowrap; }
+#game-review-body td:nth-child(3) { text-align: center; }
+#game-review-body td:nth-child(4) { text-align: left; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -148,7 +155,7 @@ nav h1 { margin: 0; font-size: 1.1rem; }
   <figure>
     <table role="grid">
       <thead>
-        <tr><th scope="col">#</th><th scope="col">Comparison</th><th scope="col">Result</th></tr>
+        <tr><th scope="col">#</th><th scope="col" colspan="3">Comparison</th><th scope="col">Result</th></tr>
       </thead>
       <tbody id="game-review-body"></tbody>
     </table>

@@ -464,7 +464,9 @@ function renderGameReview() {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${i + 1}</td>
-      <td>${reviewSideHTML(a, guess === "a")} ${symbol} ${reviewSideHTML(b, guess === "b")}</td>
+      <td>${reviewSideHTML(a, guess === "a")}</td>
+      <td>${symbol}</td>
+      <td>${reviewSideHTML(b, guess === "b")}</td>
       <td>${correct ? "<ins>&check;</ins>" : "<del>&cross;</del>"}</td>
     `;
     frag.appendChild(tr);
