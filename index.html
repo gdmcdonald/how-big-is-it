@@ -29,9 +29,11 @@ figure { overflow-x: auto; }
 @media (max-width: 575.98px) {
   figure { margin-inline: calc(var(--pico-spacing) * -1); }
 }
-/* Comparison and Game tabs: same thumbnail mechanism as the table, just
-   bigger, since there are only ever two on screen at once. */
-#compare-result .thumb, #panel-game .thumb { width: 96px; height: 96px; }
+/* Comparison tab and the Game tab's round-play cards: same thumbnail
+   mechanism as the table, just bigger, since there are only ever two on
+   screen at once. (The Game tab's end-of-round review table is an actual
+   data table, so its thumbnails stay at the default row size below.) */
+#compare-result .thumb, #game-card-a .thumb, #game-card-b .thumb { width: 96px; height: 96px; }
 .compare-card { text-align: center; }
 /* Title + tabs share one condensed header row (Pico's nav auto-spaces a
    first and last <ul> apart), so the h1 needs to drop its normal block
@@ -146,7 +148,7 @@ nav h1 { margin: 0; font-size: 1.1rem; }
   <figure>
     <table role="grid">
       <thead>
-        <tr><th scope="col">#</th><th scope="col">Your guess</th><th scope="col">Bigger one</th><th scope="col">Result</th></tr>
+        <tr><th scope="col">#</th><th scope="col">Comparison</th><th scope="col">Result</th></tr>
       </thead>
       <tbody id="game-review-body"></tbody>
     </table>

@@ -445,38 +445,56 @@ function nextDifficulty(difficulty) {
   return null; // hard is the ceiling
 }
 
+// The player's actual guess renders in Pico's default link colour (blue);
+// the side they didn't pick gets Pico's own `.contrast` class to de-emphasize
+// it to body-text colour instead — both still real, clickable wiki links,
+// just visually distinguished using Pico's existing link conventions rather
+// than a hand-rolled colour class.
+function reviewSideHTML(d, isGuess) {
+  const linkClass = isGuess ? "" : ' class="contrast"';
+  return `${thumbPlaceholderHTML(d)} <a href="${d.wiki}" target="_blank" rel="noopener"${linkClass}>${d.name}</a>`;
+}
+
 function renderGameReview() {
   const tbody = document.getElementById("game-review-body");
   const frag = document.createDocumentFragment();
   gameState.rounds.forEach((round, i) => {
     const { a, b, guess, correct } = round;
-    const guessedName = guess === "a" ? a.name : b.name;
-    const biggerName = a.area_km2 >= b.area_km2 ? a.name : b.name;
+    const symbol = a.area_km2 === b.area_km2 ? "=" : (a.area_km2 > b.area_km2 ? "&gt;" : "&lt;");
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${i + 1}</td>
-      <td>${guessedName}</td>
-      <td>${biggerName}</td>
+      <td>${reviewSideHTML(a, guess === "a")} ${symbol} ${reviewSideHTML(b, guess === "b")}</td>
       <td>${correct ? "<ins>&check;</ins>" : "<del>&cross;</del>"}</td>
     `;
     frag.appendChild(tr);
   });
   tbody.innerHTML = "";
   tbody.appendChild(frag);
+  // 10 rows / 20 thumbnails, shown once at game end — resolve directly
+  // rather than routing through the main table's lazy-load
+  // IntersectionObserver (same reasoning as Compare's two-thumb case).
+  document.querySelectorAll("#game-review-body .thumb").forEach(resolveThumb);
 }
 
 async function shareGameResult(score, difficulty) {
   const text = `I scored ${score}/10 on "How big is it?" (${difficulty}) \u2014 can you beat me?`;
   const url = location.href.split("#")[0];
   const shareBtn = document.getElementById("game-share");
+  const fullMessage = `${text} ${url}`;
 
   if (navigator.share) {
-    try { await navigator.share({ text, url }); } catch (e) { /* user cancelled the share sheet */ }
+    // Deliberately one combined `text` field, no separate `url` field: some
+    // share targets (iMessage in particular) render a url field as a link
+    // preview card and drop an accompanying text field entirely, which
+    // silently loses the goading message. Folding the link into the text
+    // itself means every target gets the whole thing, together.
+    try { await navigator.share({ text: fullMessage }); } catch (e) { /* user cancelled the share sheet */ }
     return;
   }
   if (navigator.clipboard) {
     try {
-      await navigator.clipboard.writeText(`${text} ${url}`);
+      await navigator.clipboard.writeText(fullMessage);
       const original = shareBtn.textContent;
       shareBtn.textContent = "Copied!";
       setTimeout(() => { shareBtn.textContent = original; }, 1500);
