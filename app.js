@@ -653,6 +653,42 @@ function setupGame() {
     document.getElementById("game-end").hidden = true;
     document.getElementById("game-setup").hidden = false;
   });
+  document.addEventListener("keydown", handleGameKeydown);
+}
+
+// Keyboard play: setup picks a difficulty (1/2/3), mid-round picks the left
+// or right card (arrows or 1/2), and once revealed, Enter/Space advances.
+// Deliberately calls .click() on the existing buttons rather than calling
+// startGame/handleGameGuess directly, so this can never drift out of sync
+// with whatever those click handlers actually do — one source of truth.
+// Scoped to only fire while the Game tab is the visible panel, and bails
+// out of any key that would otherwise land in a text field elsewhere on
+// the page (Browse's search box, Compare's two inputs).
+function handleGameKeydown(e) {
+  if (document.getElementById("panel-game").hidden) return;
+  const focusedTag = document.activeElement && document.activeElement.tagName;
+  if (focusedTag === "INPUT" || focusedTag === "TEXTAREA" || focusedTag === "SELECT") return;
+  if (e.repeat) return; // one action per press, not one per auto-repeat tick while held
+
+  if (!document.getElementById("game-setup").hidden) {
+    const difficultyForKey = { "1": "easy", "2": "medium", "3": "hard" };
+    const difficulty = difficultyForKey[e.key];
+    if (difficulty) { e.preventDefault(); startGame(difficulty); }
+    return;
+  }
+
+  if (!document.getElementById("game-play").hidden) {
+    if (e.key === "ArrowLeft" || e.key === "1") {
+      e.preventDefault();
+      document.getElementById("game-card-a").click(); // no-ops if already answered/disabled
+    } else if (e.key === "ArrowRight" || e.key === "2") {
+      e.preventDefault();
+      document.getElementById("game-card-b").click();
+    } else if (e.key === "Enter" || e.key === " ") {
+      const nextBtn = document.getElementById("game-next");
+      if (!nextBtn.hidden) { e.preventDefault(); nextBtn.click(); }
+    }
+  }
 }
 
 /* --------------------------------- Tabs --------------------------------- */

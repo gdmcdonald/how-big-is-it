@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
 <title>How big is it?</title>
+<meta name="description" content="Is Mars bigger than the Atlantic Ocean? Is Pluto bigger than Russia? Compare 344 countries, oceans, continents and solar system objects by surface area, or play the guessing game.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gdmcdonald.github.io/how-big-is-it/">
+<meta property="og:title" content="How Big Is It?">
+<meta property="og:description" content="Is Mars bigger than the Atlantic Ocean? Is Pluto bigger than Russia? Compare 344 countries, oceans, continents and solar system objects by surface area, or play the guessing game.">
+<meta property="og:image" content="https://gdmcdonald.github.io/how-big-is-it/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Big Is It?">
+<meta name="twitter:description" content="Is Mars bigger than the Atlantic Ocean? Is Pluto bigger than Russia? Compare 344 countries, oceans, continents and solar system objects by surface area.">
+<meta name="twitter:image" content="https://gdmcdonald.github.io/how-big-is-it/preview.png">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 
 <script data-goatcounter="https://gordon.goatcounter.com/count"
@@ -70,6 +85,10 @@ nav h1 { margin: 0; font-size: 1.1rem; }
    right, on one line — same reason as the nav's title+tabs row: two ends
    of one flex row rather than two separately-aligned blocks. */
 .game-status-row { display: flex; justify-content: space-between; align-items: baseline; }
+/* Centers the reveal text and Next-round button, which are plain block
+   flow (not grid/flex like their siblings above), so they'd otherwise
+   default to the browser's left-aligned text flow. */
+#game-play { text-align: center; }
 </style>
 </head>
 <body>
@@ -148,9 +167,9 @@ nav h1 { margin: 0; font-size: 1.1rem; }
 <div id="game-setup">
   <p>Guess which of two is bigger by area. Ten rounds, then you get a score.</p>
   <div class="grid">
-    <button type="button" data-difficulty="easy">Easy</button>
-    <button type="button" data-difficulty="medium">Medium</button>
-    <button type="button" data-difficulty="hard">Hard &mdash; image only</button>
+    <button type="button" data-difficulty="easy">Easy <small>(1)</small></button>
+    <button type="button" data-difficulty="medium">Medium <small>(2)</small></button>
+    <button type="button" data-difficulty="hard">Hard &mdash; image only <small>(3)</small></button>
   </div>
 </div>
 
@@ -163,6 +182,7 @@ nav h1 { margin: 0; font-size: 1.1rem; }
     <button type="button" id="game-card-a" class="outline"></button>
     <button type="button" id="game-card-b" class="outline"></button>
   </div>
+  <p><small>&larr;/1 to guess left, &rarr;/2 to guess right, Enter for next round</small></p>
   <p id="game-reveal" aria-live="polite"></p>
   <button type="button" id="game-next" hidden>Next round &rarr;</button>
 </div>
